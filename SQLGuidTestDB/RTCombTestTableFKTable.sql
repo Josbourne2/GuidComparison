@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[RTCombTestTableFKTable]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[FK] UNIQUEIDENTIFIER NOT NULL REFERENCES RTCombTestTable(UUID)
+
+)
+
+GO
+
+CREATE INDEX [IX_RTCombTestTableFKTable_FK] ON [dbo].[RTCombTestTableFKTable] (FK)

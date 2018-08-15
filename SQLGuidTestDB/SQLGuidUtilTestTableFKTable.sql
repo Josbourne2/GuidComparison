@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[SQLGuidUtilTestTableFKTable]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[FK] UNIQUEIDENTIFIER NOT NULL REFERENCES SqlGuidUtilTestTable(UUID)
+)
+
+GO
+
+CREATE INDEX [IX_SQLGuidUtilTestTableFKTable_FK] ON [dbo].[SQLGuidUtilTestTableFKTable] (FK)
