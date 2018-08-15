@@ -66,4 +66,7 @@
     <Build Include="RTCombTestTableFKTable.sql" />
     <Build Include="SQLGuidUtilTestTableFKTable.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="SQLGuidTestDB.publish.xml" />
+  </ItemGroup>
 </Project>
