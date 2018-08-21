@@ -28,6 +28,8 @@ namespace GuidComparison
 
         private void btnGo_Click(object sender, EventArgs e)
         {
+            List<Statistics> statList = new List<Statistics>();
+            
             InsertMethods.InsertDelegate handler = null;
             int numberOfRowsToInsert;
             int.TryParse(txtNumberOfRows.Text, out numberOfRowsToInsert);
@@ -37,24 +39,27 @@ namespace GuidComparison
                 {
                     if (cblInsertOptions.Items[i].ToString() == "Random guids")
                     {
-                        handler += Workers.InsertMethods.InsertRandomGuids;                        
-                    } 
-                    //MessageBox.Show(cblInsertOptions.Items[i].ToString());
+                        handler += Workers.InsertMethods.InsertRandomGuids;
+                    }                    
                     if (cblInsertOptions.Items[i].ToString() == "Sequential guids (Leonid)")
                     {
+
                         handler += Workers.InsertMethods.InsertLeonid;
                     }
                     if (cblInsertOptions.Items[i].ToString() == "Sequential guids (RT.Comb)")
                     {
                         handler += Workers.InsertMethods.InsertRTComb;
                     }
-                     
+
                 }
             }
 
             //Execute all methods
-            handler?.Invoke(numberOfRowsToInsert);
-
+            handler?.Invoke(numberOfRowsToInsert, ref statList);
+            BindingList<Statistics> bindingList = new BindingList<Statistics>(statList);
+            BindingSource source = new BindingSource(bindingList, null);
+            dataGridView1.DataSource = source;
+            
 
         }
     }
