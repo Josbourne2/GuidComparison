@@ -13,10 +13,12 @@ namespace GuidComparison
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        string _connectionString;
+        public Form1(string connectionString)
         {
             InitializeComponent();
             Name = "Guid comparison";
+            _connectionString = connectionString;
 
 
         }
@@ -55,7 +57,7 @@ namespace GuidComparison
             }
 
             //Execute all methods
-            handler?.Invoke(numberOfRowsToInsert, ref statList);
+            handler?.Invoke(numberOfRowsToInsert, ref statList, _connectionString);
             BindingList<Statistics> bindingList = new BindingList<Statistics>(statList);
             BindingSource source = new BindingSource(bindingList, null);
             dataGridView1.DataSource = source;

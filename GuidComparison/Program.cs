@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace GuidComparison
 {
@@ -15,13 +16,13 @@ namespace GuidComparison
         [STAThread]
         static void Main()
         {
+            ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["SQLGuidConnection"];            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1(settings.ConnectionString));
 
-
-            string connectionstring = "Server=localhost;Database=SqlGuidTestDB;Trusted_Connection = yes; ";
-            Timer t1 = new Timer();
+            
+            
 
 
             Console.WriteLine("Now Leonid's approach");

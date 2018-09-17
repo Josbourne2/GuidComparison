@@ -5,18 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Configuration;
 
 namespace GuidComparison.Workers
 {
     static class InsertMethods
     {
-        public delegate void InsertDelegate(int number, ref List<Statistics> statsList);
-        static string connectionstring = "Server=localhost;Database=SqlGuidTestDB;Trusted_Connection = yes; ";
-        public static void InsertLeonid(int number, ref List<Statistics> statsList)
+        public delegate void InsertDelegate(int number, ref List<Statistics> statsList, string connectionString);        
+        
+        public static void InsertLeonid(int number, ref List<Statistics> statsList, string connectionString)
         {
             Stopwatch stopwatch = new Stopwatch();
             Statistics stats = new Statistics();
-            using (SqlConnection con = new SqlConnection(connectionstring))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 stopwatch.Start();
@@ -36,8 +37,7 @@ namespace GuidComparison.Workers
                 stopwatch.Stop();
                 stats.Operation = System.Reflection.MethodBase.GetCurrentMethod().Name;
                 stats.DurationInMilliseconds = stopwatch.ElapsedMilliseconds;
-                statsList.Add(stats);
-                // Console.WriteLine(myGuid.ToString());
+                statsList.Add(stats);                
             }
 
 
@@ -45,11 +45,11 @@ namespace GuidComparison.Workers
 
 
 
-        public static void InsertRTComb(int number, ref List<Statistics> statsList)
+        public static void InsertRTComb(int number, ref List<Statistics> statsList, string connectionString)
         {
             Stopwatch stopwatch = new Stopwatch();
             Statistics stats = new Statistics();
-            using (SqlConnection con = new SqlConnection(connectionstring))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 stopwatch.Start();
@@ -70,17 +70,13 @@ namespace GuidComparison.Workers
                 stats.Operation = System.Reflection.MethodBase.GetCurrentMethod().Name;
                 stats.DurationInMilliseconds = stopwatch.ElapsedMilliseconds;
                 statsList.Add(stats);
-                //Console.WriteLine(myGuid.ToString());
-
-
-
             }
         }
-        public static void InsertRandomGuids(int number, ref List<Statistics> statsList)
+        public static void InsertRandomGuids(int number, ref List<Statistics> statsList, string connectionString)
         {
             Stopwatch stopwatch = new Stopwatch();
             Statistics stats = new Statistics();
-            using (SqlConnection con = new SqlConnection(connectionstring))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 stopwatch.Start();
@@ -101,8 +97,6 @@ namespace GuidComparison.Workers
                 stats.Operation = System.Reflection.MethodBase.GetCurrentMethod().Name;
                 stats.DurationInMilliseconds = stopwatch.ElapsedMilliseconds;
                 statsList.Add(stats);
-
-                // Console.WriteLine(myGuid.ToString());
             }
         }
     }
