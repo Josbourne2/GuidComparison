@@ -6,11 +6,16 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("GuidComparison")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription(@"This is a simple tool I wrote to demonstrate the pain there is in using random Guids inside sql server.
+
+This tool demonstrates an easy way to work around the pain, and can be used to show your colleagues
+how easy it is to improve performance by using a tiny bit of C# code while still being able to generate
+your Guids in the client app.
+")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GuidComparison")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyProduct("Guid performance comparison tool for SQL Server ")]
+[assembly: AssemblyCopyright("Copyright © Jos Menhart, 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

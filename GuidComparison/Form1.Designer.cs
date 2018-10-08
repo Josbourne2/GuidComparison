@@ -34,10 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblNumberOfRows = new System.Windows.Forms.Label();
             this.txtNumberOfRows = new System.Windows.Forms.TextBox();
-            this.cbDisplayStatistics = new System.Windows.Forms.CheckBox();
             this.btnGo = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -55,9 +55,11 @@
             // 
             // optionsToolStripMenuItem
             // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.optionsToolStripMenuItem.Text = "Options";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.optionsToolStripMenuItem.Text = "Help";
             // 
             // cblInsertOptions
             // 
@@ -96,19 +98,9 @@
             this.txtNumberOfRows.Size = new System.Drawing.Size(100, 20);
             this.txtNumberOfRows.TabIndex = 4;
             // 
-            // cbDisplayStatistics
-            // 
-            this.cbDisplayStatistics.AutoSize = true;
-            this.cbDisplayStatistics.Location = new System.Drawing.Point(212, 110);
-            this.cbDisplayStatistics.Name = "cbDisplayStatistics";
-            this.cbDisplayStatistics.Size = new System.Drawing.Size(109, 17);
-            this.cbDisplayStatistics.TabIndex = 6;
-            this.cbDisplayStatistics.Text = "Display statistics?";
-            this.cbDisplayStatistics.UseVisualStyleBackColor = true;
-            // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(212, 182);
+            this.btnGo.Location = new System.Drawing.Point(212, 141);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(75, 23);
             this.btnGo.TabIndex = 7;
@@ -127,12 +119,19 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(16, 232);
+            this.groupBox1.Location = new System.Drawing.Point(16, 185);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(736, 206);
+            this.groupBox1.Size = new System.Drawing.Size(736, 207);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Statistics";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -141,7 +140,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnGo);
-            this.Controls.Add(this.cbDisplayStatistics);
             this.Controls.Add(this.txtNumberOfRows);
             this.Controls.Add(this.lblNumberOfRows);
             this.Controls.Add(this.label1);
@@ -168,10 +166,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNumberOfRows;
         private System.Windows.Forms.TextBox txtNumberOfRows;
-        private System.Windows.Forms.CheckBox cbDisplayStatistics;
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

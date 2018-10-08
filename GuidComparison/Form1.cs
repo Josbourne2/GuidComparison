@@ -31,7 +31,7 @@ namespace GuidComparison
         private void btnGo_Click(object sender, EventArgs e)
         {
             List<Statistics> statList = new List<Statistics>();
-            
+
             InsertMethods.InsertDelegate handler = null;
             int numberOfRowsToInsert;
             int.TryParse(txtNumberOfRows.Text, out numberOfRowsToInsert);
@@ -42,7 +42,7 @@ namespace GuidComparison
                     if (cblInsertOptions.Items[i].ToString() == "Random guids")
                     {
                         handler += Workers.InsertMethods.InsertRandomGuids;
-                    }                    
+                    }
                     if (cblInsertOptions.Items[i].ToString() == "Sequential guids (Leonid)")
                     {
 
@@ -57,12 +57,26 @@ namespace GuidComparison
             }
 
             //Execute all methods
-            handler?.Invoke(numberOfRowsToInsert, ref statList, _connectionString);
-            BindingList<Statistics> bindingList = new BindingList<Statistics>(statList);
-            BindingSource source = new BindingSource(bindingList, null);
-            dataGridView1.DataSource = source;
-            
+            try
+            {
+                handler?.Invoke(numberOfRowsToInsert, ref statList, _connectionString);
+                BindingList<Statistics> bindingList = new BindingList<Statistics>(statList);
+                BindingSource source = new BindingSource(bindingList, null);
+                dataGridView1.DataSource = source;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox a = new AboutBox();
+            a.Show();
         }
     }
 }
