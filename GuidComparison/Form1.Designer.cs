@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cblInsertOptions = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNumberOfRows = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.btnGo = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -61,13 +61,22 @@
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.optionsToolStripMenuItem.Text = "Help";
             // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // cblInsertOptions
             // 
             this.cblInsertOptions.FormattingEnabled = true;
             this.cblInsertOptions.Items.AddRange(new object[] {
             "Random guids",
             "Sequential guids (RT.Comb)",
-            "Sequential guids (Leonid)"});
+            "Sequential guids (Leonid)",
+            "Sequential guids (Leonid) Bulk",
+            "Random guids Bulk"});
             this.cblInsertOptions.Location = new System.Drawing.Point(16, 70);
             this.cblInsertOptions.Name = "cblInsertOptions";
             this.cblInsertOptions.Size = new System.Drawing.Size(170, 94);
@@ -125,13 +134,6 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Statistics";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Form1
             // 

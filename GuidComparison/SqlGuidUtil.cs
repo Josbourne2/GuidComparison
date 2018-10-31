@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace GuidComparison
 {
-    public class SQLGuidUtil
+    public class SqlGuidUtil
 
     {
 

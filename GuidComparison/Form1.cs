@@ -52,7 +52,14 @@ namespace GuidComparison
                     {
                         handler += Workers.InsertMethods.InsertRTComb;
                     }
-
+                    if (cblInsertOptions.Items[i].ToString() == "Sequential guids (Leonid) Bulk")
+                    {
+                        handler += Workers.InsertMethods.BulkInsertLeonid;
+                    }
+                    if (cblInsertOptions.Items[i].ToString() == "Random guids Bulk")
+                    {
+                        handler += Workers.InsertMethods.BulkInsertRandomGuids;
+                    }
                 }
             }
 

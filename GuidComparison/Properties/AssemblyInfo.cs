@@ -11,6 +11,11 @@ using System.Runtime.InteropServices;
 This tool demonstrates an easy way to work around the pain, and can be used to show your colleagues
 how easy it is to improve performance by using a tiny bit of C# code while still being able to generate
 your Guids in the client app.
+
+Some recommended reading:
+
+About sequential guids in general:
+https://docs.microsoft.com/en-us/sql/t-sql/functions/newsequentialid-transact-sql?view=sql-server-2017
 ")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]

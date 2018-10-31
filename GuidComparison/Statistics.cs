@@ -10,5 +10,6 @@ namespace GuidComparison
     {
         public string Operation { get; set; }
         public long DurationInMilliseconds { get; set; }
+        public int NumberOfRowsInTable { get; set; }
     }
 }
